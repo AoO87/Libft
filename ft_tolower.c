@@ -5,24 +5,16 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: mrowe <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/08 11:53:44 by mrowe             #+#    #+#             */
-/*   Updated: 2021/11/08 11:53:46 by mrowe            ###   ########.fr       */
+/*   Created: 2021/12/16 22:22:21 by mrowe             #+#    #+#             */
+/*   Updated: 2021/12/16 22:22:42 by mrowe            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-
-int	ft_tolower(int ch)
+int	ft_tolower(int c)
 {
-	int	c;
-
-	if (ch >= 65 && ch <= 90)
+	if (c >= 'A' && c <= 'Z')
 	{
-		c = ch + 32;
-	}
-	else
-	{
-		c = ch;
+		return (c + 32);
 	}
 	return (c);
 }

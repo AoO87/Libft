@@ -5,24 +5,16 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: mrowe <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/08 11:54:00 by mrowe             #+#    #+#             */
-/*   Updated: 2021/11/08 11:54:01 by mrowe            ###   ########.fr       */
+/*   Created: 2021/12/16 22:17:37 by mrowe             #+#    #+#             */
+/*   Updated: 2021/12/16 22:22:10 by mrowe            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-
-int	ft_toupper(int ch)
+int	ft_toupper(int c)
 {
-	int	c;
-
-	if (ch >= 97 && ch <= 122)
+	if (c >= 'a' && c <= 'z')
 	{
-		c = ch - 32;
-	}
-	else
-	{
-		c = ch;
+		return (c - 32);
 	}
 	return (c);
 }

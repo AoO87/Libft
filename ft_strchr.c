@@ -5,23 +5,29 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: mrowe <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/08 11:51:29 by mrowe             #+#    #+#             */
-/*   Updated: 2021/11/08 11:52:01 by mrowe            ###   ########.fr       */
+/*   Created: 2021/12/16 12:38:58 by mrowe             #+#    #+#             */
+/*   Updated: 2021/12/16 17:11:42 by mrowe            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
 char	*ft_strchr(const char *s, int c)
-
 {
-	while (*s)
+	int	i;
+
+	i = 0;
+	if (c == '\0')
 	{
-		if (*s == c)
-		{
-			return ((char *)s);
-		}
-		s++;
+		return ((char *)s + ft_strlen(s));
 	}
-	return (0);
+	while (s[i])
+	{
+		if (s[i] == c)
+		{
+			return ((char *)s + i);
+		}
+		i++;
+	}
+	return (NULL);
 }

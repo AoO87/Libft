@@ -1,13 +1,23 @@
-#include "libft.h"
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mrowe <marvin@42.fr>                       +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/11/12 21:50:12 by mrowe             #+#    #+#             */
+/*   Updated: 2021/12/16 22:15:43 by mrowe            ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-size_t	ft_strlen(const char *str)
+int	ft_strlen(char *str)
 {
-	int	length;
+	int	i;
 
-	length = 0;
-	while (str[length] != '\0')
+	i = 0;
+	while (str[i])
 	{
-		length++;
+		i++;
 	}
-	return (length);
+	return (i);
 }
