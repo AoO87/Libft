@@ -6,7 +6,19 @@
 /*   By: mrowe <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/02 21:57:03 by mrowe             #+#    #+#             */
-/*   Updated: 2022/03/02 21:58:11 by mrowe            ###   ########.fr       */
+/*   Updated: 2022/03/03 21:51:36 by mrowe            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
+
+void	ft_putstr_fd(char *s, int fd)
+{
+	int	i;
+
+	i = 0;
+	while (s[i])
+	{
+		ft_putchar_fd(s[i++], fd);
+	}
+}

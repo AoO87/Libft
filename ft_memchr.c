@@ -6,10 +6,27 @@
 /*   By: mrowe <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/16 22:38:04 by mrowe             #+#    #+#             */
-/*   Updated: 2021/12/16 22:38:04 by mrowe            ###   ########.fr       */
+/*   Updated: 2022/03/03 23:42:47 by mrowe            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memchr(const void *s, int c, size_t n);
+void	*ft_memchr(const void *s, int c, size_t n)
+{
+	const char	*t;
+	size_t		i;
+
+	i = 0;
+	t = s;
+	while (i < n)
+	{
+		if (t[i] == c)
+		{
+			return ((char *)s);
+		}
+		s++;
+		i++;
+	}
+	return (NULL);
+}
