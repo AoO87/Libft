@@ -6,7 +6,31 @@
 /*   By: mrowe <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/02 21:57:36 by mrowe             #+#    #+#             */
-/*   Updated: 2022/03/02 21:57:54 by mrowe            ###   ########.fr       */
+/*   Updated: 2022/03/10 22:24:47 by mrowe            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
+
+char	*ft_substr(const char *s, unsigned int start, size_t len)
+{
+	unsigned int			i;
+	unsigned int			j;
+	char					*substr;
+
+	i = 0;
+	substr = (char *)malloc(sizeof substr * (len + 1));
+	j = start;
+	if (!substr || start > ft_strlen(s))
+	{
+		return (NULL);
+	}
+	while (i < len && s[j])
+	{
+		substr[i] = s[j];
+		i++;
+		j++;
+	}
+	substr[i] = '\0';
+	return (substr);
+}

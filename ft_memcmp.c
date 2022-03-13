@@ -6,7 +6,7 @@
 /*   By: mrowe <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/02 21:13:11 by mrowe             #+#    #+#             */
-/*   Updated: 2022/03/02 21:58:54 by mrowe            ###   ########.fr       */
+/*   Updated: 2022/03/11 21:29:53 by mrowe            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,9 +23,13 @@ int	ft_memcmp(const void *s1, const void *s2, size_t n)
 	str2 = (unsigned char *)s2;
 	while (i < n)
 	{
-		if (str1[i] != str2[i])
+		if (str1[i] < str2[i])
 		{
-			return (str1[i] - str2[i]);
+			return (-1);
+		}
+		if (str1[i] > str2[i])
+		{
+			return (1);
 		}
 	i++;
 	}
