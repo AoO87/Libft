@@ -6,7 +6,7 @@
 /*   By: mrowe <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/13 21:51:53 by mrowe             #+#    #+#             */
-/*   Updated: 2022/03/14 21:36:08 by mrowe            ###   ########.fr       */
+/*   Updated: 2022/03/18 14:51:31 by mrowe            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,8 @@ int	find_length(int n)
 		i = 1;
 		return (i);
 	}
+	if (n < 0)
+		i = 1;
 	while (n != 0)
 	{
 		i++;
@@ -33,14 +35,12 @@ int	find_length(int n)
 
 char	*ft_itoa(int n)
 {
-	int				num_len;
 	char			*number;
 	int				i;
 	unsigned int	c;
 
-	num_len = find_length(n);
-	i = num_len -1;
-	number = (char *)malloc(sizeof number * num_len + 1);
+	i = find_length(n) - 1;
+	number = (char *)malloc(sizeof(char) * (find_length(n) + 1));
 	if (!number)
 		return (NULL);
 	if (n == 0)
@@ -48,10 +48,10 @@ char	*ft_itoa(int n)
 	c = n;
 	if (n < 0)
 	{
-		i++;
 		number[0] = '-';
 		c = -n;
 	}
+	number[i + 1] = '\0';
 	while (c)
 	{
 		number[i--] = (c % 10) + 48;
